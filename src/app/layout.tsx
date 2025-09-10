@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 
-import './globals.css';
-
 export const metadata: Metadata = {
   title: 'Pingdum - Trang chính thức',
   description: 'Khám phá Pingdum - thông tin, dịch vụ và sản phẩm chính thức. Website chính thức của Pingdum.',
