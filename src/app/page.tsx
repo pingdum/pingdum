@@ -1,11 +1,24 @@
 import Image from 'next/image';
 import React from 'react';
+import { useGeolocation } from './useLocation'
 
 export default function GridAutoDemo() {
+  const { loading, latitude, longitude, permission, error } = useGeolocation({
+    enableHighAccuracy: true
+  })
+
+  if (permission === 'denied')
+    return <p>❌ Bạn đã từ chối quyền truy cập vị trí. Hãy bật lại trong cài đặt trình duyệt.</p>
+
+  if (loading) return <p>⏳ Đang lấy vị trí...</p>
+
+  if (error) return <p>⚠️ Lỗi: {error.message}</p>
+
+  if (permission === 'prompt') return <p>🔔 Vui lòng cho phép truy cập vị trí.</p>
   return (
     <div className="grid-container" style={{ padding: '24px' }}>
       <div>
-        <h1>Pingdum</h1>
+        <h1>Pingdum {latitude}, {longitude}</h1>
 
         <p>
           <strong>Pingdum</strong> là một công ty công nghệ nổi bật trong lĩnh vực giám sát và tối ưu hóa hiệu suất
