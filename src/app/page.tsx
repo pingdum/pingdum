@@ -4,7 +4,7 @@ import React from 'react';
 import { useGeolocation } from './useLocation'
 
 export default function GridAutoDemo() {
-  const { loading, latitude, longitude, permission, error } = useGeolocation({
+  const { loading, latitude, longitude, permission, error, accuracy } = useGeolocation({
     enableHighAccuracy: true
   })
 
@@ -19,7 +19,7 @@ export default function GridAutoDemo() {
   return (
     <div className="grid-container" style={{ padding: '24px' }}>
       <div>
-        <h1>Pingdum {latitude}, {longitude}</h1>
+        <h1>Pingdum {latitude}, {longitude}, {accuracy}</h1>
 
         <p>
           <strong>Pingdum</strong> là một công ty công nghệ nổi bật trong lĩnh vực giám sát và tối ưu hóa hiệu suất
