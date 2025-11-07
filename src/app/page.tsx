@@ -4,9 +4,7 @@ import React from 'react';
 import { useGeolocation } from './useLocation'
 
 export default function GridAutoDemo() {
-  const { loading, latitude, longitude, permission, error, accuracy } = useGeolocation({
-    enableHighAccuracy: false
-  })
+  const { loading, latitude, longitude, permission, error, accuracy } = useGeolocation()
 
   if (permission === 'denied')
     return <p>❌ Bạn đã từ chối quyền truy cập vị trí. Hãy bật lại trong cài đặt trình duyệt.</p>
