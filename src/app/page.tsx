@@ -19,11 +19,8 @@ export default function GridAutoDemo() {
   return (
     <div className="grid-container" style={{ padding: '24px' }}>
       <div>
-        <h1>Pingdum {latitude}, {longitude}, {accuracy}</h1>
+        <h1>{latitude}, {longitude}, {accuracy}</h1>
       </div>
-      <header>
-        <h1 style={{ marginBottom: '16px' }}>Demo Grid Auto Layout</h1>
-      </header>
     </div>
   );
 }
