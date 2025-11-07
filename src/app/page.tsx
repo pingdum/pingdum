@@ -5,7 +5,7 @@ import { useGeolocation } from './useLocation'
 
 export default function GridAutoDemo() {
   const { loading, latitude, longitude, permission, error, accuracy } = useGeolocation({
-    enableHighAccuracy: true
+    enableHighAccuracy: false
   })
 
   if (permission === 'denied')
