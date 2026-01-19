@@ -1,4 +1,3 @@
-// GKC: 01JPKNE8A7Z8AFWC717C0GBAA5
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
