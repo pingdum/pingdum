@@ -28,6 +28,7 @@ const deleteServerCookie = (
   key: string,
   options: Cookies.CookieAttributes = {},
 ) => {
+  console.log("Deleting server cookie:", key);
   return Cookies.remove(key, {
     domain: "https://pingdum.vercel.app",
     expires: 0,
