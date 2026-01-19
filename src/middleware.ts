@@ -1,3 +1,4 @@
+// GKC: 01JPKNE8A7Z8AFWC717C0GBAA5
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
@@ -37,9 +38,7 @@ export async function middleware(request: NextRequest) {
     const searchParams = new URLSearchParams(search);
     const companyId = searchParams.get("COMPANY_ID");
 
-    response.cookies.set("NEXT_URL", pathname + search + hash, {
-      domain: request.nextUrl.protocol + "//" + request.nextUrl.host,
-    });
+    response.cookies.set("NEXT_URL", pathname + search + hash);
 
     if (companyId) {
       response.cookies.set("COMPANY_ID", companyId);
