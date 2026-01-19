@@ -39,7 +39,7 @@ export async function middleware(request: NextRequest) {
     const companyId = searchParams.get("COMPANY_ID");
 
     response.cookies.set("NEXT_URL", pathname + search + hash, {
-      domain: request.nextUrl.hostname,
+      domain: request.nextUrl.protocol + "//" + request.nextUrl.host,
     });
 
     if (companyId) {
