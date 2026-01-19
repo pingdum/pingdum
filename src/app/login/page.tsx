@@ -6,7 +6,9 @@ export default function LoginPage() {
   const handleLogin = () => {
     StorageUtils.setCookie("access_token", "dummy_token");
     const nextUrl = StorageUtils.getCookie("NEXT_URL") || "/";
-    StorageUtils.deleteCookie("NEXT_URL", {}, "");
+    StorageUtils.deleteCookie("NEXT_URL", {
+      domain: "",
+    });
     window.location.href = nextUrl;
   };
 
