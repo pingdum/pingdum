@@ -38,7 +38,9 @@ export async function middleware(request: NextRequest) {
     const searchParams = new URLSearchParams(search);
     const companyId = searchParams.get("COMPANY_ID");
 
-    response.cookies.set("NEXT_URL", pathname + search + hash);
+    response.cookies.set("NEXT_URL", pathname + search + hash, {
+      httpOnly: false,
+    });
 
     if (companyId) {
       response.cookies.set("COMPANY_ID", companyId);
