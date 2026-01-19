@@ -1,13 +1,12 @@
 "use client";
 
 import StorageUtils from "@/utils/storage";
-import Cookies from 'js-cookie';
 
 export default function LoginPage() {
   const handleLogin = () => {
     StorageUtils.setCookie("access_token", "dummy_token");
     const nextUrl = StorageUtils.getCookie("NEXT_URL") || "/";
-    Cookies.remove('NEXT_URL');
+    StorageUtils.deleteCookie("NEXT_URL");
     window.location.href = nextUrl;
   };
 
