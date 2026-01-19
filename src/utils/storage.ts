@@ -16,10 +16,15 @@ const setCookie = (
   });
 };
 
-const deleteCookie = (key: string, options: Cookies.CookieAttributes = {}) => {
+const deleteCookie = (
+  key: string,
+  options: Cookies.CookieAttributes = {},
+  domain?: string,
+) => {
   // Set domain = "" if you are deleting a cookie set from the server
+  console.log("domain:", domain || window.location.hostname);
   return Cookies.remove(key, {
-    domain: window.location.hostname,
+    domain: domain || window.location.hostname,
     expires: 0,
     ...options,
   });
