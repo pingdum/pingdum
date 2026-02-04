@@ -9,7 +9,7 @@ on:
 env:
   NODE_ENV: ${{ vars.NODE_ENV }}
   API_KEY: ${{ secrets.API_KEY }}
-  NEXT_PUBLIC_CLIENT_API_KEY: ${{ secrets.NEXT_PUBLIC_CLIENT_API_KEY }}
+  NEXT_PUBLIC_CLIENT_API_KEY: ${{ vars.NEXT_PUBLIC_CLIENT_API_KEY }}
 
 permissions:
   contents: read
