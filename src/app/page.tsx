@@ -1,5 +1,9 @@
+'use client'
+
 export default function HomePage() {
-  console.log("ENV:", process.env.NEXT_PUBLIC_CLIENT_API_KEY);
+  useEffect(() => {
+    console.log("ENV:", process.env.NEXT_PUBLIC_CLIENT_API_KEY);
+  }, []);
   return (
     <div>
       <h1>Home: {process.env.NEXT_PUBLIC_CLIENT_API_KEY}</h1>
